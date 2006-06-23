@@ -39,8 +39,8 @@ module ValidaCNPJ
         soma += valor[i] * fatores[i]
       end
 
-      soma = soma - (11 * (soma / 11))       
-      dv1 = soma < 2 ? 0 : 11 - soma
+      resto = soma % 11       
+      dv1 = resto < 2 ? 0 : 11 - resto
 
       if dv1 == valor[12]
         soma = 0
@@ -48,8 +48,8 @@ module ValidaCNPJ
           soma += valor[i] * (i == 0 ? 6 : fatores[i-1])
         end
 
-        soma = soma - (11 * (soma /11))
-        dv2 = soma < 2 ? 0 : 11 - soma
+        resto = soma % 11
+        dv2 = resto < 2 ? 0 : 11 - resto
 
         return true if dv2 == valor[13]
       end
