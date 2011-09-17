@@ -63,7 +63,7 @@ module ActiveRecord
   module Validations
     module ClassMethods
       def validates_as_cnpj(*attr_names)
-        configuration = { :message => "is invalid" }
+        configuration = { :message => :invalid }
         configuration.update(attr_names.pop) if attr_names.last.is_a?(Hash)
 
         validates_each(attr_names, configuration) do |record, attr_name, value|
