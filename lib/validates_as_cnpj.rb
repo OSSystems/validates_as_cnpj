@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # validates_as_cnpj.rb - implement the validation of cnpj
-#  
+#
 #  Copyright (c) 2006 O.S. Systems
 #
 #  Authors: André Ribeiro Camargo <andre@boaideia.inf.br>,
 #           Luis Gustavo S. Barreto <gustavo@ossystems.com.br>
-# 
+#
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
 #   the Free Software Foundation; either version 2 of the License, or
@@ -18,7 +18,7 @@
 module ValidaCNPJ
   def self.valida_cnpj(cnpj = nil)
     return nil if cnpj.nil?
-    
+
     nulos = %w{11111111111111
                22222222222222
                33333333333333
@@ -40,7 +40,7 @@ module ValidaCNPJ
         soma += valor[i] * fatores[i]
       end
 
-      resto = soma % 11       
+      resto = soma % 11
       dv1 = resto < 2 ? 0 : 11 - resto
 
       if dv1 == valor[12]
