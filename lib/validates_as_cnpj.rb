@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 # validates_as_cnpj.rb - implement the validation of cnpj
 #  
 #  Copyright (c) 2006 O.S. Systems
-#  
-#  Authors: André Ribeiro Camargo <andre@boaideia.inf.br>,
+#
+#  Authors: AndrÃ© Ribeiro Camargo <andre@boaideia.inf.br>,
 #           Luis Gustavo S. Barreto <gustavo@ossystems.com.br>
 # 
 #   This program is free software; you can redistribute it and/or modify
@@ -33,7 +34,7 @@ module ValidaCNPJ
 
     fatores = [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
 
-    if valor.length == 14 and not nulos.member?(valor.to_s)
+    if valor.length == 14 and not nulos.member?(valor.join)
       soma = 0
       0.upto(11) do |i|
         soma += valor[i] * fatores[i]

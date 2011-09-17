@@ -1,5 +1,4 @@
-require File.dirname(__FILE__) + '/abstract_unit'
-require File.dirname(__FILE__) + '/../lib/validates_as_cnpj'
+require File.expand_path(File.dirname(__FILE__) + '/test_helper')
 
 # Modelo
 class CNPJData < ActiveRecord::Base
